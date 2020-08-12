@@ -26,6 +26,7 @@ else
 endif
 let s:I3 = [ '#f8f8f0' , '#465457' , 253 , 67  ]
 
+
 let g:airline#themes#dgmolokai#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
 let g:airline#themes#dgmolokai#palette.insert_modified = {
       \ 'airline_c': [ '#080808' , '#66d9ef' , 232 , 81 , '' ] ,
@@ -64,6 +65,29 @@ let s:IA = [ '#1b1d1e' , '#465457' , 233 , 67 , '' ]
 let g:airline#themes#dgmolokai#palette.inactive = airline#themes#generate_color_map(s:IA, s:IA, s:IA)
 let g:airline#themes#dgmolokai#palette.inactive_modified = {
       \ 'airline_c': [ '#f8f8f0' , ''        , 253 , ''  , '' ] ,
+      \ }
+
+"airline_tab: visible but not active buffer
+"airline_tabsel: active buffer
+"airline_tabtype: ?
+"airline_tabfill: background color
+"airline_tabmod: unsaved active buffer
+"airline_tabmod: unsaved non-active buffer (visible??)
+" Todo: make non-visible tabs grey
+let s:TABBLUE = ['#ffffff', '#4654A7',  231, 29, '']
+let s:TABDIMBLUE = ['#000000', '#404040',  231, 29, '']
+let s:TABYELLOW = ['#000000', '#e6e674',  231, 36, '']
+let s:TABRED = ['#f8f8f8', '#e67000',  231, 88, '']
+let s:TABDIMRED = ['#dddddd', '#663000',  231, 88, '']
+let s:TABGRAYBG = ['#0fffff', '#2b2b2b',  231, 23, '']
+let g:airline#themes#dgmolokai#palette.tabline = {
+      \ 'airline_tab':  s:TABBLUE,
+      \ 'airline_tabsel':  s:TABYELLOW,
+      \ 'airline_tabhid':  s:TABDIMBLUE,
+      \ 'airline_tabtype':  ['#0fffff', '#FF5252',  231, 36, ''],
+      \ 'airline_tabfill': s:TABGRAYBG,
+      \ 'airline_tabmod': s:TABRED,
+      \ 'airline_tabmod_unsel':  s:TABDIMRED,
       \ }
 
 " CtrlP
